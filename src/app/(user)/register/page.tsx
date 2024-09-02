@@ -1,5 +1,6 @@
 import Link from "next/link";
-import EyeClosedIcon from "@/app/(user)/register/components/EyeClosedIcon";
+import EyeClosedIcon from "@/app/(user)/components/EyeClosedIcon";
+import EyeOpenIcon from "@/app/(user)/components/EyeOpenIcon";
 
 export default function Home() {
   return (
@@ -19,9 +20,9 @@ export default function Home() {
           <form className="register_form">
             <div className="register_file_container">
               <div>
-                <label htmlFor="" className="register_label">
+                <span className="register_label">
                   Foto de perfil
-                </label>
+                </span>
               </div>
               <div className="register_file_container_input">
                 <div className="register_user_image">
@@ -44,7 +45,8 @@ export default function Home() {
                   </svg>
                 </div>
                 <div>
-                  <div className="register_input_file">
+                  <input type="file" id="input_file" className="register_file_picker"/>
+                  <label htmlFor="input_file" className="register_input_file">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="22"
@@ -78,7 +80,7 @@ export default function Home() {
                       />
                     </svg>
                     <div>Carregar imagem</div>
-                  </div>
+                  </label>
                 </div>
               </div>
             </div>
@@ -133,14 +135,14 @@ export default function Home() {
                 <label htmlFor="senha" className="register_label">
                   Crie uma senha:
                 </label>
-                <div className="">
+                <div className="register_input_icon_container">
                   <input
                     id="senha"
-                    type="text"
+                    type="password"
                     placeholder="Digite sua senha..."
-                    className="register_input"
+                    className="register_input register_input_password"
                   />
-                  <div>
+                  <div className="register_input_icon">
                     <EyeClosedIcon />
                   </div>
                 </div>
@@ -149,20 +151,23 @@ export default function Home() {
                 <label htmlFor="confirmacao_senha" className="register_label">
                   Confirme sua senha:
                 </label>
-                <div className="">
+                <div className="register_input_icon_container">
                   <input
                     id="confirmacao_senha"
-                    type="text"
+                    type="password"
                     placeholder="Digite sua senha novamente..."
-                    className="register_input"
+                    className="register_input register_input_password"
                   />
-                  <div>
-                    <EyeClosedIcon />
+                  <div className="register_input_icon">
+                    <EyeOpenIcon />
                   </div>
                 </div>
               </div>
             </div>
             <div className="register_form_pt3">
+              {
+              //<span className="register_form_error">O formulário teve um erro hehehe</span>
+              }
               <button type="submit" className="register_form_submit">
                 Registrar
               </button>

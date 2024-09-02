@@ -8,6 +8,10 @@ html, body{
     font-family: "Roboto", sans-serif;
 }
 
+/*
+app - (user) - register
+*/
+
 @layer components {
     .register_header{
         @apply w-full h-[56px] bg-[#ECF0F4]
@@ -41,6 +45,14 @@ html, body{
         @apply flex flex-col gap-[8px]
     }
 
+    .register_file_container{
+        @apply flex flex-col gap-[8px]
+    }
+
+    .register_file_picker{
+        @apply hidden
+    }
+
     .register_file_container_input{
         @apply flex justify-between items-center
     }
@@ -50,8 +62,9 @@ html, body{
     }
 
     .register_input_file{
-        @apply rounded-full bg-[#2B2B5F] flex items-center justify-center
+        @apply rounded-full bg-[#2B2B5F] flex items-center justify-center cursor-pointer
         w-fit h-fit py-[6px] px-[16px] gap-[8px] text-white font-medium text-[14px]
+        hover:bg-[#202034]
     }
 
     .register_form_pt2{
@@ -80,12 +93,169 @@ html, body{
         outline-black outline-1
     }
 
+    .register_input_password{
+        @apply rounded-tr-none rounded-br-none
+    }
+
+    .register_input_icon_container{
+        @apply grid grid-cols-[1fr_35px]
+    }
+
+    .register_input_icon{
+        @apply bg-[#ECF0F4] rounded-tr-[8px] rounded-br-[8px]
+        flex items-center justify-center cursor-pointer
+    }
+
+    .register_form_error{
+        @apply w-full h-fit font-semibold text-[14px] text-rose-700
+    }
+
     .register_form_submit{
         @apply w-full h-[50px] text-center font-medium text-[16px]
         rounded-full bg-[#2B2B5F] text-white hover:bg-[#202034] transition-colors duration-200 outline-black outline-1
     }
 
+    .register_form_submit:disabled{
+        @apply bg-[#ECF0F4] text-[#202034] hover:bg-[#ECF0F4] cursor-not-allowed
+    }
+
     .register_form_link{
+        @apply w-full h-[50px] flex items-center justify-center font-medium text-[16px]
+        rounded-full ring-1 ring-[#2B2B5F] text-[#2B2B5F]
+        hover:bg-[#8C8CB3] hover:text-white hover:ring-[#8C8CB3] transition-colors duration-200 outline-black outline-1
+    }
+}
+
+/*
+app - (user) - register - complete
+*/
+
+@layer components{
+    .register_complete_main{
+        @apply w-full h-screen flex justify-center items-center
+    }
+
+    .register_complete_sub_main{
+        @apply w-[90%] max-w-[500px] h-[244px] flex flex-col justify-center items-center gap-[24px]
+    }
+
+    .register_complete_info{
+        @apply flex flex-col items-center gap-[16px]
+    }
+
+    .register_complete_success{
+        @apply w-[80px] h-[80px] bg-[#ECF0F4] flex justify-center items-center rounded-full
+    }
+
+    .register_complete_message{
+        @apply flex flex-col gap-[4px]
+    }
+
+    .register_complete_title{
+        @apply text-[16px] font-semibold text-[#2B2B5F] text-center
+    }
+
+    .register_complete_subtitle{
+        @apply text-[#8F97A6] font-normal text-[14px] text-center
+    }
+
+    .register_complete_link{
+        @apply w-full h-[50px] bg-[#2B2B5F] text-white hover:bg-[#202034]
+        flex items-center justify-center rounded-full
+    }
+}
+
+/*
+app - (user) - login
+*/
+
+@layer components{
+    .login_header{
+        @apply w-full h-[56px] bg-[#ECF0F4]
+        flex items-center gap-[12px] justify-end pr-[24px]
+    }
+
+    .login_header_link_full{
+        @apply font-light text-[14px] py-[6px] px-[16px] rounded-full bg-[#2B2B5F] text-white
+        hover:bg-[#202034] transition-colors duration-200 outline-black outline-1
+    }
+
+    .login_header_link_outline{
+        @apply font-normal text-[14px] py-[6px] px-[16px] rounded-full ring-1 ring-[#2B2B5F] text-[#2B2B5F]
+        hover:bg-[#8C8CB3] hover:text-white hover:ring-[#8C8CB3] transition-colors duration-200 outline-black outline-1
+    }
+
+    .login_main{
+        @apply w-full h-screen flex flex-col justify-center items-center gap-[24px]
+    }
+
+    .login_title{
+        @apply font-bold text-[28px] text-[#202034] text-center
+    }
+
+    .login_form{
+        @apply flex flex-col gap-[24px]
+        w-[90%] max-w-[500px]
+    }
+
+    .login_form_pt1{
+        @apply flex flex-col gap-[16px]
+    }
+
+    .login_input_container{
+        @apply w-full h-[64px] flex flex-col gap-[4px]
+    }
+
+    .login_label{
+        @apply font-semibold text-[14px] text-[#202034]
+    }
+
+    .login_input{
+        @apply w-full h-[38px] bg-[#ECF0F4] rounded-[8px]
+        font-normal text-[14px] text-[#8F97A6] px-[12px]
+        outline-black outline-1
+    }
+
+    .login_password_align{
+        @apply flex flex-col items-end gap-[8px]
+    }
+
+    .login_input_icon_container{
+        @apply grid grid-cols-[1fr_35px]
+    }
+
+    .login_input_password{
+        @apply rounded-tr-none rounded-br-none
+    }
+
+    .login_input_icon{
+        @apply bg-[#ECF0F4] rounded-tr-[8px] rounded-br-[8px]
+        flex items-center justify-center cursor-pointer
+    }
+
+    .login_forgot_password{
+        @apply font-normal text-[14px] text-[#202034] underline underline-offset-4
+        hover:text-[#202034] transition-colors duration-200
+    }
+
+    .login_form_pt2{
+        @apply flex flex-col gap-[12px]
+    }
+
+    .login_form_error{
+        @apply w-full h-fit font-semibold text-[14px] text-rose-700
+    }
+
+    .login_form_submit{
+        @apply w-full h-[50px] text-center font-medium text-[16px]
+        rounded-full bg-[#2B2B5F] text-white hover:bg-[#202034] transition-colors duration-200 outline-black outline-1
+    }
+
+    .login_form_submit:disabled{
+        @apply bg-[#ECF0F4] text-[#202034] hover:bg-[#ECF0F4] cursor-not-allowed
+    }
+
+    .login_form_link{
         @apply w-full h-[50px] flex items-center justify-center font-medium text-[16px]
         rounded-full ring-1 ring-[#2B2B5F] text-[#2B2B5F]
         hover:bg-[#8C8CB3] hover:text-white hover:ring-[#8C8CB3] transition-colors duration-200 outline-black outline-1
