@@ -1,33 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+html, body{
+    font-family: "Roboto", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
+@layer components {
+    .register_header{
+        @apply w-full h-[56px] bg-[#ECF0F4]
+        flex items-center gap-[12px] justify-end pr-[24px]
+    }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+    .register_header_link_full{
+        @apply font-light text-[14px] py-[6px] px-[16px] rounded-full bg-[#2B2B5F] text-white
+        hover:bg-[#202034] transition-colors duration-200 outline-black outline-1
+    }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+    .register_header_link_outline{
+        @apply font-normal text-[14px] py-[6px] px-[16px] rounded-full ring-1 ring-[#2B2B5F] text-[#2B2B5F]
+        hover:bg-[#8C8CB3] hover:text-white hover:ring-[#8C8CB3] transition-colors duration-200 outline-black outline-1
+    }
+
+    .register_main{
+        @apply flex flex-col items-center gap-[24px] py-[48px]
+    }
+
+    .register_title{
+        @apply font-bold text-[28px] text-[#202034] text-center
+    }
+
+    .register_form{
+        @apply flex flex-col gap-[24px]
+        w-[90%] max-w-[500px]
+    }
+
+    .register_form_pt1{
+        @apply flex flex-col gap-[8px]
+    }
+
+    .register_file_container_input{
+        @apply flex justify-between items-center
+    }
+
+    .register_user_image{
+        @apply bg-[#ECF0F4] w-[64px] h-[64px] rounded-full flex items-center justify-center
+    }
+
+    .register_input_file{
+        @apply rounded-full bg-[#2B2B5F] flex items-center justify-center
+        w-fit h-fit py-[6px] px-[16px] gap-[8px] text-white font-medium text-[14px]
+    }
+
+    .register_form_pt2{
+        @apply flex flex-col gap-[16px]
+    }
+
+    .register_form_pt3{
+        @apply flex flex-col gap-[12px]
+    }
+
+    .register_input_container_double{
+        @apply flex flex-row gap-[16px]
+    }
+
+    .register_input_container{
+        @apply w-full h-[64px] flex flex-col gap-[4px]
+    }
+
+    .register_label{
+        @apply font-semibold text-[14px] text-[#202034]
+    }
+
+    .register_input{
+        @apply w-full h-[38px] bg-[#ECF0F4] rounded-[8px]
+        font-normal text-[14px] text-[#8F97A6] px-[12px]
+        outline-black outline-1
+    }
+
+    .register_form_submit{
+        @apply w-full h-[50px] text-center font-medium text-[16px]
+        rounded-full bg-[#2B2B5F] text-white hover:bg-[#202034] transition-colors duration-200 outline-black outline-1
+    }
+
+    .register_form_link{
+        @apply w-full h-[50px] flex items-center justify-center font-medium text-[16px]
+        rounded-full ring-1 ring-[#2B2B5F] text-[#2B2B5F]
+        hover:bg-[#8C8CB3] hover:text-white hover:ring-[#8C8CB3] transition-colors duration-200 outline-black outline-1
+    }
 }
