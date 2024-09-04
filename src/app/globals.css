@@ -13,17 +13,17 @@ app - (user) - register
 */
 
 @layer components {
-    .register_header{
+    .user_header{
         @apply w-full h-[56px] bg-[#ECF0F4]
         flex items-center gap-[12px] justify-end pr-[24px]
     }
 
-    .register_header_link_full{
+    .user_header_link_full{
         @apply font-light text-[14px] py-[6px] px-[16px] rounded-full bg-[#2B2B5F] text-white
         hover:bg-[#202034] transition-colors duration-200 outline-black outline-1
     }
 
-    .register_header_link_outline{
+    .user_header_link_outline{
         @apply font-normal text-[14px] py-[6px] px-[16px] rounded-full ring-1 ring-[#2B2B5F] text-[#2B2B5F]
         hover:bg-[#8C8CB3] hover:text-white hover:ring-[#8C8CB3] transition-colors duration-200 outline-black outline-1
     }
@@ -32,7 +32,7 @@ app - (user) - register
         @apply flex flex-col items-center gap-[24px] py-[48px]
     }
 
-    .register_title{
+    .user_title{
         @apply font-bold text-[28px] text-[#202034] text-center
     }
 
@@ -156,7 +156,7 @@ app - (user) - register - complete
     }
 
     .register_complete_subtitle{
-        @apply text-[#8F97A6] font-normal text-[14px] text-center
+        @apply text-[#626262] font-normal text-[14px] text-center
     }
 
     .register_complete_link{
@@ -170,27 +170,8 @@ app - (user) - login
 */
 
 @layer components{
-    .login_header{
-        @apply w-full h-[56px] bg-[#ECF0F4]
-        flex items-center gap-[12px] justify-end pr-[24px]
-    }
-
-    .login_header_link_full{
-        @apply font-light text-[14px] py-[6px] px-[16px] rounded-full bg-[#2B2B5F] text-white
-        hover:bg-[#202034] transition-colors duration-200 outline-black outline-1
-    }
-
-    .login_header_link_outline{
-        @apply font-normal text-[14px] py-[6px] px-[16px] rounded-full ring-1 ring-[#2B2B5F] text-[#2B2B5F]
-        hover:bg-[#8C8CB3] hover:text-white hover:ring-[#8C8CB3] transition-colors duration-200 outline-black outline-1
-    }
-
     .login_main{
-        @apply w-full h-screen flex flex-col justify-center items-center gap-[24px]
-    }
-
-    .login_title{
-        @apply font-bold text-[28px] text-[#202034] text-center
+        @apply w-full h-full py-[48px] flex flex-col justify-center items-center gap-[24px]
     }
 
     .login_form{
@@ -259,5 +240,114 @@ app - (user) - login
         @apply w-full h-[50px] flex items-center justify-center font-medium text-[16px]
         rounded-full ring-1 ring-[#2B2B5F] text-[#2B2B5F]
         hover:bg-[#8C8CB3] hover:text-white hover:ring-[#8C8CB3] transition-colors duration-200 outline-black outline-1
+    }
+}
+
+/*
+app - (user) - login - forgotPassword
+*/
+
+@layer components{
+    .forgot_password_page{
+        @apply w-full flex items-center justify-center
+    }
+
+    .forgot_password_main{
+        @apply flex flex-col gap-[24px] w-[90%] max-w-[500px] py-[48px]
+    }
+
+    .forgot_password_title_container{
+        @apply flex gap-[16px] items-center
+    }
+
+    .forgot_password_title{
+        @apply font-bold text-[28px] text-[#202034]
+    }
+
+    .forgot_password_content{
+        @apply flex flex-col gap-[16px]
+    }
+
+    .forgot_password_subtitle{
+        @apply font-normal text-[14px] text-[#626262] text-center
+    }
+
+    .forgot_password_input_container{
+        @apply w-full h-[64px] flex flex-col gap-[4px]
+    }
+
+    .forgot_password_form{
+        @apply flex flex-col gap-[24px]
+    }
+
+    .forgot_password_label{
+        @apply font-semibold text-[14px] text-[#202034]
+    }
+
+    .forgot_password_input{
+        @apply w-full h-[38px] bg-[#ECF0F4] rounded-[8px]
+        font-normal text-[14px] text-[#8F97A6] px-[12px]
+        outline-black outline-1
+    }
+
+    .forgot_password_form_backline{
+        @apply w-full
+    }
+
+    .forgot_password_form_error{
+        @apply w-full h-fit font-semibold text-[14px] text-rose-700
+    }
+
+    .forgot_password_form_submit{
+        @apply w-full h-[50px] text-center font-medium text-[16px]
+        rounded-full bg-[#2B2B5F] text-white hover:bg-[#202034] transition-colors duration-200 outline-black outline-1
+    }
+}
+
+/*
+app - (user) - login - forgotPassword
+*/
+
+@layer components{
+    .forgot_password_main_page_auth{
+        @apply w-full flex justify-center
+    }
+
+    .forgot_password_main_auth{
+        @apply w-[90%] max-w-[525px] py-[48px] flex flex-col gap-[24px]
+    }
+
+    .forgot_password_label_container_auth{
+        @apply w-full flex justify-center
+    }
+
+    .forgot_password_form_auth{
+        @apply flex flex-col gap-[24px]
+    }
+
+    .forgot_password_label_auth{
+        @apply font-normal text-[14px] text-[#626262]
+    }
+
+    .forgot_password_input_container_auth{
+        @apply w-full flex justify-around
+    }
+
+    .forgot_password_input_auth{
+        @apply w-[42.5px] h-[54px] ring-[2px] ring-[#DBDBDB] rounded-[10px] text-center text-[16px]
+    }
+
+    .forgot_password_form_error_auth{
+        @apply w-full h-fit font-semibold text-[14px] text-rose-700
+    }
+
+    .forgot_password_form_submit_auth{
+        @apply w-full h-[50px] text-center font-medium text-[16px]
+        rounded-full bg-[#2B2B5F] text-white hover:bg-[#202034] transition-colors duration-200 outline-black outline-1
+    }
+
+    .forgot_password_link_return{
+        @apply text-[#2B2B5F] text-[14px] underline underline-offset-4 text-center
+        hover:text-[#202034] transition-colors duration-200
     }
 }

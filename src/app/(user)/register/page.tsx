@@ -1,28 +1,26 @@
 import Link from "next/link";
-import EyeClosedIcon from "@/app/(user)/components/EyeClosedIcon";
-import EyeOpenIcon from "@/app/(user)/components/EyeOpenIcon";
+import EyeClosedIcon from "@/app/(user)/components/UI/Icons/EyeClosedIcon";
+import EyeOpenIcon from "@/app/(user)/components/UI/Icons/EyeOpenIcon";
 
 export default function Home() {
   return (
     <>
       <div>
-        <header className="register_header">
-          <Link href="/register" className="register_header_link_full">
+        <header className="user_header">
+          <Link href="/register" className="user_header_link_full">
             Cadastre-se
           </Link>
-          <Link href="/login" className="register_header_link_outline">
+          <Link href="/login" className="user_header_link_outline">
             Entrar
           </Link>
         </header>
         <main className="register_main">
-          <h1 className="register_title">Faça parte da nossa comunidade</h1>
+          <h1 className="user_title">Faça parte da nossa comunidade</h1>
 
           <form className="register_form">
             <div className="register_file_container">
               <div>
-                <span className="register_label">
-                  Foto de perfil
-                </span>
+                <span className="register_label">Foto de perfil</span>
               </div>
               <div className="register_file_container_input">
                 <div className="register_user_image">
@@ -45,7 +43,11 @@ export default function Home() {
                   </svg>
                 </div>
                 <div>
-                  <input type="file" id="input_file" className="register_file_picker"/>
+                  <input
+                    type="file"
+                    id="input_file"
+                    className="register_file_picker"
+                  />
                   <label htmlFor="input_file" className="register_input_file">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -166,7 +168,7 @@ export default function Home() {
             </div>
             <div className="register_form_pt3">
               {
-              //<span className="register_form_error">O formulário teve um erro hehehe</span>
+                //<span className="register_form_error">O formulário teve um erro hehehe</span>
               }
               <button type="submit" className="register_form_submit">
                 Registrar
